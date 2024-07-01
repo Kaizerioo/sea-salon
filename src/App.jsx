@@ -13,6 +13,7 @@ function App() {
     height: '120vh',
   };
 
+
   return (
     <>
     <Navbar/>
@@ -50,7 +51,7 @@ function App() {
     </div>
     </Element>
     <Element name='reviews' className='montserrat h-[100vh] pt-[10vh] bg-[#646464] text-[#ffffff] bg-gradient-to-b from-[#646464] to-white'>
-
+    ini review page
     </Element>
 
     </>
