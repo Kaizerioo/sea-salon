@@ -1,10 +1,10 @@
 import { Link } from "react-scroll";
 import logo from "../assets/logo.png";
-
+import loginIcon from "../assets/login.png"
 export const Navbar = () => {
   return (
     <>
-      <nav className="bg-gradient-to-b from-black to-transparent w-full flex flex-row justify-between items-center fixed z-10">
+      <nav className="bg-gradient-to-b from-[#050505] to-transparent w-full flex flex-row justify-between items-center fixed z-10">
         <div>
           <button className="m-4 mx-10 text-[#ffffff] mb-16">
             <Link
@@ -13,7 +13,7 @@ export const Navbar = () => {
               duration={500}
               className="flex flex-row items-center gap-4 text-2xl hover:text-[#B6BBC4]"
             >
-              <img src={logo} className="w-12 hover:opacity-50" />
+              <img src={logo} className="w-12 hover:opacity-50 unna-bold" />
               SEA SALON
             </Link>
           </button>
@@ -35,7 +35,7 @@ export const Navbar = () => {
             </Link>
           </button>
           <button className=" text-white hover:text-[#B6BBC4] p-2 px-8 ">
-            LOGIN INFO
+            <img src={loginIcon} className="w-8 bg-white rounded-full "/>
           </button>
         </div>
       </nav>
