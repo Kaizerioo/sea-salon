@@ -1,4 +1,5 @@
 import { Navbar } from "./components/Navbar";
+import { RegisForm } from "./components/RegisForm";
 import { Element, Link } from "react-scroll";
 import backgroundImage from "./assets/background1.jpeg";
 import haircut from "./assets/haircut.jpg";
@@ -22,6 +23,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <RegisForm/>
       <Element
         name="home"
         style={backgroundStyle}
