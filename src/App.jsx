@@ -5,6 +5,8 @@ import haircut from "./assets/haircut.jpg";
 import facial from "./assets/facial.jpg";
 import pedi from "./assets/pedicure.jpg";
 import { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
 
@@ -15,7 +17,8 @@ function App() {
     height: "120vh",
   };
 
-  const [star, setStar] = useState(0);
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
   return (
     <>
       <Navbar />
@@ -44,18 +47,29 @@ function App() {
         <h1 className="left-text flex flex-col justify-center items-center text-5xl mt-32">
           OUR SERVICES
         </h1>
-        <div className="flex flex-row justify-between items-centers px-52 py-10">
-          <div className="bg-white text-black font-semibold border rounded-md">
-            <img src={haircut} className=" w-96 rounded-md pb-5" />
-            <p className="items-center justify-center flex pb-5 text-3xl">Haircuts and Styling</p>
+        <div className="flex flex-row justify-between items-centers px-96 py-10">
+          <div className="max-w-xs bg-white border rounded-lg shadow">
+            <img src={haircut} className=" w-96 rounded-md" />
+            <div className="p-5">
+              <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">Haircuts and Styling</p>
+              <p className="mb-3 font-normal text-gray-700">A Modern and stylish haircut, expert styling, and vibrant coloring to enhance your look.</p>
+            </div>
           </div>
-          <div className=" bg-white text-black font-semibold border rounded-md">
-            <img src={pedi} className=" w-96 rounded-lg pb-5" />
-            <p className="items-center justify-center flex text-3xl">Manicure and Pedicure</p>
+          <div className=" max-w-xs bg-white border border-gray-200 rounded-lg shadow">
+            <img src={pedi} className=" w-96 rounded-lg" />
+            <div className="p-5">
+            <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">Manicure and Pedicure</p>
+            <p  className="mb-3 font-normal text-gray-700">Expert nail shaping, cuticle care, and polish for perfectly groomed hands and feet.</p>
+            </div>
+            
           </div>
-          <div className="bg-white text-black font-semibold border rounded-md">
-            <img src={facial} className=" w-96 rounded-lg pb-5" />
-            <p className="items-center justify-center flex text-3xl">Facial Treatment</p>
+          <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow">
+            <img src={facial} className=" w-96 rounded-lg" />
+            <div className="p-5">
+            <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">Facial Treatment</p>
+            <p className="mb-3 font-normal text-gray-700">Rejuvenating facials that cleanse, exfoliate, and hydrate for a radiant glow.</p>
+            </div>
+            
           </div>
         </div>
       </Element>
@@ -64,18 +78,23 @@ function App() {
         className="montserrat h-[100vh] pt-[10vh] bg-[#646464] text-[#ffffff] bg-gradient-to-b from-[#646464] to-white"
       >
         <div className="flex flex-col pt-48">
-          <div className="flex justify-center items-center text-3xl py-5">
-            Review !
+          <div className="flex justify-center items-center text-5xl py-3 mb-5">
+            Rate your Experience !
           </div>
-          <div className="flex justify-center">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-          </div>
+          <div className="flex justify-center mb-6">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <FontAwesomeIcon
+              key={star}
+              icon={faStar}
+              className={`text-6xl px-4 cursor-pointer ${star <= (hover || rating) ? 'text-[#333333]' : 'text-gray-300'}`}
+              onClick={() => setRating(star)}
+              onMouseEnter={() => setHover(star)}
+              onMouseLeave={() => setHover(rating)}
+            />
+          ))}
+        </div>
           <div className="flex justify-center pt-5">
-            <textarea name="comments" id="comments" placeholder="Comments"></textarea>
+            <textarea className="rounded-md min-w-[60vh] min-h-[20vh] max-h-[32vh] p-3 border-[2px] text-black" placeholder="Leave a review . . ."></textarea>
           </div>
           <div className="flex justify-center py-5">
             <button className="border rounded-lg  bg-white text-black py-1 px-5">Submit</button>
