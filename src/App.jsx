@@ -122,6 +122,23 @@ function App() {
           </div>
         </div>
       </Element>
+      <div className="bg-black h-[24vh]  justify-center pt-10">
+        <div className="flex flex-row">
+            <div className="bg-transparent flex flex-col self-center gap-2 mx-5">
+                <h3 className='bg-transparent text-2xl text-neutral-100 text-center'>Working Hours</h3>
+                <p className='bg-transparent text-neutral-100 text-center'>Monday - Friday: 9:00 AM - 8:00 PM</p>
+                <p className='bg-transparent text-neutral-100 text-center'>Saturday - Sunday: 10:00 AM - 6:00 PM</p>
+            </div>
+            <div className='bg-transparent flex flex-col self-center gap-2 mx-5'>
+                <h3 className='bg-transparent text-2xl text-neutral-100 text-center'>Contacts</h3>
+                <p className='bg-transparent text-neutral-100 text-center'>Thomas - 08123456789</p>
+                <p className='bg-transparent text-neutral-100  text-center'>Sekar - 08164829372</p>
+            </div>
+        </div>
+        <div>
+          <p className='bg-transparent text-gray-300 text-center'>&copy; 2024 SEA Salon. All rights reserved.</p>
+        </div>
+      </div>
     </>
   );
 }
