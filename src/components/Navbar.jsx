@@ -1,12 +1,16 @@
 import { Link } from "react-scroll";
+import { useState } from "react";
+import { RegisForm } from "./RegisForm";
 import logo from "../assets/logo.png";
 import loginIcon from "../assets/login.png"
+
 export const Navbar = () => {
+
   return (
     <>
-      <nav className="bg-gradient-to-b from-[#050505] to-transparent w-full flex flex-row justify-between items-center fixed z-10">
+      <nav className="bg-gradient-to-b from-[#050505] to-transparent w-[100%] flex flex-row justify-between items-center fixed z-10">
         <div>
-          <button className="m-4 mx-10 text-[#ffffff] mb-16">
+          <button className="m-8 mx-10 text-[#ffffff] mb-16">
             <Link
               to="home"
               smooth={true}
@@ -34,8 +38,8 @@ export const Navbar = () => {
               REVIEW
             </Link>
           </button>
-          <button className=" text-white hover:text-[#B6BBC4] p-2 px-8 ">
-            <img src={loginIcon} className="w-8 bg-white rounded-full "/>
+          <button className=" p-2 px-8">
+            <img src={loginIcon} className="w-8 bg-white rounded-full hover:bg-[#B6BBC4]"/>
           </button>
         </div>
       </nav>

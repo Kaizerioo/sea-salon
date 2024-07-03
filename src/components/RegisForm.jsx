@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ToggleComponent } from '../context/ToggleComponent'
+import { LoginForm } from './LoginForm'
 
 export const RegisForm = () => {
   return (
-    <div className='fixed inset-0 flex flex-col items-center z-50 bg-[#ffffff] bg-opacity-75 backdrop-blur-md border border-[#ffffff] rounded-2xl my-52 mx-[70vh]'>
+    
+    <div className='fixed flex flex-col items-center z-50 bg-[#ffffff] bg-opacity-75 backdrop-blur-md border border-[#202020] rounded-2xl mx-[36%] my-[20vh] px-4'>
         <h1 className='p-5 text-5xl text-[#202020] unna-bold'>
             Register
         </h1>
@@ -22,9 +25,11 @@ export const RegisForm = () => {
             
             <sub>
                 already have account? 
-                <button className='underline pl-1'>Login here</button>
+                <button className='underline pl-1 mb-6'>Login here</button>
             </sub>
         </div>
     </div>
+    
   )
+  
 }

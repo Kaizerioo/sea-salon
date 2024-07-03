@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
+
   const backgroundStyle = {
     backgroundImage: `linear-gradient(to top, rgba(10,10,10,1) 0%,rgba(0,0,0,0) 100%),url(${backgroundImage})`,
     backgroundSize: "cover",
@@ -20,9 +21,11 @@ function App() {
 
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
+  
   return (
     <>
       <Navbar />
+      <LoginForm/>
       <Element
         name="home"
         style={backgroundStyle}
@@ -48,7 +51,7 @@ function App() {
         <h1 className="left-text flex flex-col justify-center items-center text-5xl mt-32 pt-serif-bold">
           OUR SERVICES
         </h1>
-        <div className="flex flex-row justify-between items-centers px-96 py-10">
+        <div className="flex flex-row justify-between items-centers px-64 py-10">
           <div className="max-w-xs bg-white border rounded-lg shadow">
             <img src={haircut} className=" w-96 rounded-md" />
             <div className="p-5">
@@ -123,7 +126,7 @@ function App() {
         </div>
       </Element>
       <div className="bg-black h-[24vh]  justify-center pt-10">
-        <div className="flex flex-row">
+        <div className="flex flex-row justify-center pb-4">
             <div className="bg-transparent flex flex-col self-center gap-2 mx-5">
                 <h3 className='bg-transparent text-2xl text-neutral-100 text-center'>Working Hours</h3>
                 <p className='bg-transparent text-neutral-100 text-center'>Monday - Friday: 9:00 AM - 8:00 PM</p>
