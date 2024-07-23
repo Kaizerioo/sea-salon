@@ -4,11 +4,13 @@ import backgroundImage from "./assets/background1.jpeg";
 import haircut from "./assets/haircut.jpg";
 import facial from "./assets/facial.jpg";
 import pedi from "./assets/pedicure.jpg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { RegisForm } from "./components/RegisForm";
 import { LoginForm } from "./components/LoginForm";
+import { ToggleComponent } from "./context/ToggleComponent";
+import { ReservationForm } from "./components/ReservationForm";
 
 function App() {
 
@@ -21,13 +23,14 @@ function App() {
 
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
- 
+  const {showReservation, setShowReservation} = useContext(ToggleComponent);
 
   return (
     <>
       <Navbar/>
       <RegisForm/>
       <LoginForm/>
+      <ReservationForm/>
       <Element
         name="home"
         style={backgroundStyle}
@@ -41,7 +44,7 @@ function App() {
           “ Beauty and Elegance Redefined ”
         </div>
         <div className="left-text flex flex-col justify-center items-center pt-6">
-          <button className="bg-[#ffffff] hover:bg-[#B6BBC4] border border-[#202020] rounded-full px-6 py-4 text-xl text-[#202020] pt-serif-bold">
+          <button className="bg-[#ffffff] hover:bg-[#B6BBC4] border border-[#202020] rounded-full px-6 py-4 text-xl text-[#202020] pt-serif-bold" onClick={()=>{setShowReservation(!showReservation)}}>
             BOOK NOW
           </button>
         </div>
