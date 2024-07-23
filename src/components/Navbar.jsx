@@ -1,11 +1,13 @@
 import { Link } from "react-scroll";
-import { useState } from "react";
-import { RegisForm } from "./RegisForm";
 import logo from "../assets/logo.png";
 import loginIcon from "../assets/login.png"
+import { useContext } from "react";
+import { ToggleComponent } from "../context/ToggleComponent";
+import { RegisForm } from "./RegisForm";
+
 
 export const Navbar = () => {
-
+  const {showRegister, setShowRegister} = useContext(ToggleComponent);
   return (
     <>
       <nav className="bg-gradient-to-b from-[#050505] to-transparent w-[100%] flex flex-row justify-between items-center fixed z-10">
@@ -39,10 +41,10 @@ export const Navbar = () => {
             </Link>
           </button>
           <button className=" p-2 px-8">
-            <img src={loginIcon} className="w-8 bg-white rounded-full hover:bg-[#B6BBC4]"/>
+            <img src={loginIcon} className="w-8 bg-white rounded-full hover:bg-[#B6BBC4]" onClick={()=> {setShowRegister(!showRegister)}}/>
           </button>
         </div>
       </nav>
     </>
-  );
-};
+  )
+}

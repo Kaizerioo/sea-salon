@@ -1,9 +1,14 @@
-import React from 'react'
-import { RegisForm } from './RegisForm'
+import React, { useContext } from 'react'
+import { ToggleComponent } from '../context/ToggleComponent'
 
 export const LoginForm = () => {
+    const {showRegister, setShowRegister} = useContext(ToggleComponent);
+    const {showLogin, setShowLogin} = useContext(ToggleComponent);
+    if(!showLogin){
+        return null;
+    }
   return (
-    <div className='fixed flex flex-col items-center z-50 bg-[#ffffff] bg-opacity-75 backdrop-blur-md border border-[#202020] rounded-2xl my-52 mx-[36%] px-4'>
+    <div className='fixed flex flex-col items-center z-50 bg-[#ffffff] bg-opacity-75 backdrop-blur-md border border-[#202020] rounded-2xl my-52 mx-[37.5%] px-4'>
         <h1 className='p-5 text-5xl text-[#202020] unna-bold'>
             Login
         </h1>
@@ -20,9 +25,12 @@ export const LoginForm = () => {
             
             <sub>
                 don't have account? 
-                <button className='underline pl-1 pb-6'>Register here</button>
+                <button className='underline pl-1 pb-6' onClick={()=> {setShowRegister(!showRegister), setShowLogin(!showLogin)}}>Register here</button>
             </sub>
         </div>
+        <button className="absolute top-4 right-4 text-gray-800" onClick={()=> {setShowLogin(false)}}>
+          &times;
+        </button>
     </div>
   )
 }

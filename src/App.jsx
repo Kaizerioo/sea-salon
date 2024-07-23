@@ -1,6 +1,4 @@
 import { Navbar } from "./components/Navbar";
-import { RegisForm } from "./components/RegisForm";
-import { LoginForm } from "./components/LoginForm";
 import { Element, Link } from "react-scroll";
 import backgroundImage from "./assets/background1.jpeg";
 import haircut from "./assets/haircut.jpg";
@@ -9,6 +7,8 @@ import pedi from "./assets/pedicure.jpg";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { RegisForm } from "./components/RegisForm";
+import { LoginForm } from "./components/LoginForm";
 
 function App() {
 
@@ -21,10 +21,12 @@ function App() {
 
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-  
+ 
+
   return (
     <>
-      <Navbar />
+      <Navbar/>
+      <RegisForm/>
       <LoginForm/>
       <Element
         name="home"
