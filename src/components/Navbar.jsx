@@ -26,7 +26,7 @@ export const Navbar = () => {
         </div>
         <div className="gap-20 flex flex-row items-center m-4 mb-16">
           <button className=" text-white hover:text-[#B6BBC4]  p-2 px-8 ">
-            <Link to="home" smooth={true} duration={500}>
+            <Link to="home" smooth={true} duration={500} >
               HOME
             </Link>
           </button>

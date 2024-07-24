@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { ToggleComponent } from '../context/ToggleComponent'
+
 export const RegisForm = () => {
     const {showRegister, setShowRegister} = useContext(ToggleComponent);
     const {showLogin, setShowLogin} = useContext(ToggleComponent);

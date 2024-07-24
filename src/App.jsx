@@ -11,9 +11,7 @@ import { RegisForm } from "./components/RegisForm";
 import { LoginForm } from "./components/LoginForm";
 import { ToggleComponent } from "./context/ToggleComponent";
 import { ReservationForm } from "./components/ReservationForm";
-
 function App() {
-
   const backgroundStyle = {
     backgroundImage: `linear-gradient(to top, rgba(10,10,10,1) 0%,rgba(0,0,0,0) 100%),url(${backgroundImage})`,
     backgroundSize: "cover",
@@ -23,14 +21,13 @@ function App() {
 
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-  const {showReservation, setShowReservation} = useContext(ToggleComponent);
-
+  const { showReservation, setShowReservation } = useContext(ToggleComponent);
   return (
     <>
-      <Navbar/>
-      <RegisForm/>
-      <LoginForm/>
-      <ReservationForm/>
+      <Navbar />
+      <RegisForm />
+      <LoginForm />
+      <ReservationForm />
       <Element
         name="home"
         style={backgroundStyle}
@@ -44,7 +41,12 @@ function App() {
           “ Beauty and Elegance Redefined ”
         </div>
         <div className="left-text flex flex-col justify-center items-center pt-6">
-          <button className="bg-[#ffffff] hover:bg-[#B6BBC4] border border-[#202020] rounded-full px-6 py-4 text-xl text-[#202020] pt-serif-bold" onClick={()=>{setShowReservation(!showReservation)}}>
+          <button
+            className="bg-[#ffffff] hover:bg-[#B6BBC4] border border-[#202020] rounded-full px-6 py-4 text-xl text-[#202020] pt-serif-bold"
+            onClick={() => {
+              setShowReservation(!showReservation);
+            }}
+          >
             BOOK NOW
           </button>
         </div>
@@ -132,23 +134,37 @@ function App() {
       </Element>
       <div className="bg-black h-[24vh]  justify-center pt-10">
         <div className="flex flex-row justify-center pb-4">
-            <div className="bg-transparent flex flex-col self-center gap-2 mx-5">
-                <h3 className='bg-transparent text-2xl text-neutral-100 text-center'>Working Hours</h3>
-                <p className='bg-transparent text-neutral-100 text-center'>Monday - Friday: 9:00 AM - 8:00 PM</p>
-                <p className='bg-transparent text-neutral-100 text-center'>Saturday - Sunday: 10:00 AM - 6:00 PM</p>
-            </div>
-            <div className='bg-transparent flex flex-col self-center gap-2 mx-5'>
-                <h3 className='bg-transparent text-2xl text-neutral-100 text-center'>Contacts</h3>
-                <p className='bg-transparent text-neutral-100 text-center'>Thomas - 08123456789</p>
-                <p className='bg-transparent text-neutral-100  text-center'>Sekar - 08164829372</p>
-            </div>
+          <div className="bg-transparent flex flex-col self-center gap-2 mx-5">
+            <h3 className="bg-transparent text-2xl text-neutral-100 text-center">
+              Working Hours
+            </h3>
+            <p className="bg-transparent text-neutral-100 text-center">
+              Monday - Friday: 9:00 AM - 8:00 PM
+            </p>
+            <p className="bg-transparent text-neutral-100 text-center">
+              Saturday - Sunday: 10:00 AM - 6:00 PM
+            </p>
+          </div>
+          <div className="bg-transparent flex flex-col self-center gap-2 mx-5">
+            <h3 className="bg-transparent text-2xl text-neutral-100 text-center">
+              Contacts
+            </h3>
+            <p className="bg-transparent text-neutral-100 text-center">
+              Thomas - 08123456789
+            </p>
+            <p className="bg-transparent text-neutral-100  text-center">
+              Sekar - 08164829372
+            </p>
+          </div>
         </div>
         <div>
-          <p className='bg-transparent text-gray-300 text-center'>&copy; 2024 SEA Salon. All rights reserved.</p>
+          <p className="bg-transparent text-gray-300 text-center">
+            &copy; 2024 SEA Salon. All rights reserved.
+          </p>
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export default App;
