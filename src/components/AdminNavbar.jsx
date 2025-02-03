@@ -5,12 +5,13 @@ import { useContext } from "react";
 import { ToggleComponent } from "../context/ToggleComponent";
 import { RegisForm } from "./RegisForm";
 
-
-export const Navbar = () => {
-  const {showRegister, setShowRegister} = useContext(ToggleComponent);
+export const AdminNavbar = () => {
+    const {showRegister, setShowRegister} = useContext(ToggleComponent);
+    const {showAdmin, setShowAdmin} = useContext(ToggleComponent);
+    const {showLogged, setShowLogged} = useContext(ToggleComponent);
   return (
     <>
-      <nav className="bg-gradient-to-b from-[#050505] to-transparent w-[100%] flex flex-row justify-between items-center fixed z-10">
+    <nav className="bg-gradient-to-b from-[#050505] to-transparent w-[100%] flex flex-row justify-between items-center fixed z-10">
         <div className="hover:opacity-50">
           <button className="m-8 mx-10 text-[#ffffff] mb-16">
             <Link
@@ -40,8 +41,11 @@ export const Navbar = () => {
               REVIEW
             </Link>
           </button>
+          <button className="text-white hover:text-[#B6BBC4] p-2 px-8">
+            ADMIN
+          </button>
           <button className=" p-2 px-8">
-            <img src={loginIcon} className="w-8 bg-white rounded-full hover:bg-[#B6BBC4]" onClick={()=> {setShowRegister(!showRegister)}}/>
+            <img src={loginIcon} className="w-8 bg-white rounded-full hover:bg-[#B6BBC4]" onClick={()=> {setShowLogged(!showLogged)}}/>
           </button>
         </div>
       </nav>
